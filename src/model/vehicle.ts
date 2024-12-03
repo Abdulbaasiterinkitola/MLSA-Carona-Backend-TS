@@ -47,7 +47,7 @@ isLicenced: {
 
 vehicleSchema.set("toJSON", {
     transform: (document: mongoose.Document & { _id: mongoose.Types.ObjectId; __v: number }, returnedObject: any) => {
-        returnedObject.id = returnedObject._id.toString()
+        returnedObject.id = document._id.toString()
         delete returnedObject._id
         delete returnedObject.__v
     }
